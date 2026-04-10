@@ -1,0 +1,8 @@
+node_modules/
+artifacts/
+test-results/
+agents/
+
+# Temporary local inspection scripts
+tools/inspect.spec.js
+tools/playwright-inspect.mjs
