@@ -57,6 +57,7 @@ header {
   padding: 0.35rem 0 0;
   position: relative;
   z-index: 2;
+  box-shadow: 0 8px 0 rgba(5, 70, 48, 0.4);
 }
 
 .header-container {
@@ -85,7 +86,16 @@ header {
   gap: 20px;
   justify-content: flex-start;
   flex-wrap: nowrap;
+  position: relative;
 }
+
+.header-logos .logo-container {
+  border-right: 0;
+  padding-right: 26px;
+  margin-right: 24px;
+  position: relative;
+}
+
 
 .header-acoes {
   display: flex;
@@ -864,6 +874,7 @@ footer {
   gap: 20px;
 }
 
+
 .destaque-card {
   display: flex;
   flex-direction: column;
@@ -1420,6 +1431,14 @@ footer {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .page-fique .destaques-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .page-fique .destaque-card img {
+    aspect-ratio: 4 / 3;
+  }
+
   .conteudo-lateral-layout {
     grid-template-columns: 1fr;
   }
@@ -1478,6 +1497,14 @@ footer {
 
   .destaques-grid {
     grid-template-columns: 1fr;
+  }
+
+  .page-fique .destaques-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-fique .destaque-card img {
+    aspect-ratio: 16 / 9;
   }
 
   .info-secao > .etapa-hierarquia {
