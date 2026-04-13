@@ -54,7 +54,7 @@ a {
 header {
   background-color: var(--cor-primaria-verde);
   color: var(--cor-texto-claro);
-  padding: 0.35rem 0 0;
+  padding: 0;
   position: relative;
   z-index: 2;
   box-shadow: 0 8px 0 rgba(5, 70, 48, 0.4);
@@ -65,7 +65,7 @@ header {
   width: 100%;
   margin-inline: auto;
   padding-inline: 16px;
-  padding-bottom: 0.45rem;
+  padding-bottom: 0.2rem;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -74,7 +74,7 @@ header {
 
 .header-top {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: 1rem;
   flex: 0 0 auto;
@@ -82,7 +82,7 @@ header {
 
 .header-logos {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 20px;
   justify-content: flex-start;
   flex-wrap: nowrap;
@@ -116,17 +116,28 @@ header {
 
 .logo-container {
   background: rgba(255, 255, 255, 1);
-  padding: 14px 16px;
-  border-radius: 0 0 10px 10px;
+  padding: 10px 16px 8px;
+  border-radius: 0px 20px 0px 20px;
   display: flex;
   align-items: center;
+  justify-content: center;
   position: static;
   z-index: 10;
-  transform: translateY(-6px);
-  margin-bottom: 0;
+  align-self: flex-start;
+  margin-bottom: -18px;
   box-shadow:
     0 4px 8px rgba(0, 0, 0, 0.08),
     0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.logo-container img {
+  display: block;
+  height: 120px;
+  width: auto;
+  max-width: 100%;
+  margin: auto;
+  align-self: center;
+  padding-left: 10px;
 }
 
 .logo-texto {
@@ -142,15 +153,26 @@ header {
 }
 
 .logo-ceara {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.1rem;
   font-weight: 700;
   position: static;
+  align-self: center;
+}
+
+.logo-ceara img {
+  display: block;
+  margin: 0 auto;
 }
 
 /* --- Menu Principal Responsivo --- */
 .menu-toggle {
   display: none;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: none;
   border: none;
   cursor: pointer;
@@ -163,10 +185,11 @@ header {
   background-color: var(--cor-texto-claro);
   border-radius: 3px;
   transition: 0.3s;
+  transform-origin: center;
 }
 
 .menu-toggle.active span:nth-child(1) {
-  transform: rotate(50deg) translate(8px, 8px);
+  transform: translateY(8px) rotate(45deg);
 }
 
 .menu-toggle.active span:nth-child(2) {
@@ -174,7 +197,7 @@ header {
 }
 
 .menu-toggle.active span:nth-child(3) {
-  transform: rotate(-50deg) translate(3px, -5px);
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 nav.menu-principal {
@@ -184,6 +207,7 @@ nav.menu-principal {
   justify-content: flex-end;
   min-width: 0;
   flex: 1 1 auto;
+  align-self: center;
 }
 
 nav.menu-principal a {
@@ -293,6 +317,7 @@ nav.menu-principal .menu-opiniao-link {
   align-items: center;
   overflow: hidden;
   isolation: isolate;
+  z-index: 0;
 }
 
 .hero::before {
@@ -394,12 +419,13 @@ nav.menu-principal .menu-opiniao-link {
 .cartao,
 .destaque-card {
   background-color: #ffffff;
-  border-radius: 12px;
+  border-radius: 0px 20px 0px 20px;
   border: 1px solid #eaeaea;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .cartao {
+  border-radius: 0px 20px 0px 20px;
   padding: 2rem 1.5rem;
   text-align: center;
   display: flex;
@@ -1027,8 +1053,8 @@ footer {
 
   .logo-container {
     padding: 10px 12px;
-    transform: translateY(-6px);
-    margin-bottom: 0;
+    transform: translateY(0);
+    margin-bottom: -14px;
   }
 
   .logo-container img {
@@ -1111,7 +1137,7 @@ footer {
 @media (max-width: 1023px) {
   header {
     padding: 0;
-    z-index: auto;
+    z-index: 5;
   }
 
   .header-acoes .btn-header-acao {
@@ -1183,9 +1209,14 @@ footer {
 
   .menu-toggle {
     display: flex;
-    padding: 0;
+    padding: 8px;
+    width: 43px;
+    height: 43px;
     margin-left: auto;
     align-self: center;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
   }
 
   .header-acoes {
@@ -1216,7 +1247,7 @@ footer {
     margin-top: 0;
     margin-bottom: 0;
     transform: translateY(0);
-    border-radius: 0 0 10px 10px;
+    border-radius: 0px 20px 0px 20px;
   }
 
   .logo-ceara {
@@ -1281,18 +1312,39 @@ footer {
     padding: 0;
   }
   .header-container {
-    padding-block: 0 0;
+    padding-block: 4px 0;
+  }
+
+  .header-top {
+    justify-content: center;
+    align-items: center;
+    min-height: 84px;
+    padding-block: 8px;
+    position: relative;
   }
 
   .header-logos {
+    align-items: center;
+    justify-content: center;
     gap: 0.875rem;
+    margin-inline: auto;
+  }
+
+  .header-logos .logo-container {
+    padding-right: 18px;
   }
 
   .logo-container {
     padding: 6px 8px;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: -8px;
     transform: translateY(0);
+  }
+
+  .logo-ceara {
+    align-self: center;
+    position: relative;
+    top: 2px;
   }
 
   .logo-container img {
@@ -1300,11 +1352,18 @@ footer {
   }
 
   .logo-ceara img {
+    display: block;
+    margin: 0 auto;
     width: 76px;
   }
 
   .menu-toggle {
     align-self: center;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-left: 0;
+    transform: translateY(calc(-50% + 2px));
   }
 
   .logo-texto {
@@ -1456,6 +1515,26 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .header-top {
+    justify-content: center;
+    align-items: center;
+    min-height: 76px;
+    padding-block: 7px;
+    padding-right: 52px;
+  }
+
+  .header-logos {
+    justify-content: center;
+    margin-inline: auto;
+  }
+
+  .menu-toggle {
+    right: 0;
+    width: 40px;
+    height: 40px;
+    padding: 7px;
+  }
+
   .logo-container {
     transform: translateY(0);
   }
@@ -1513,5 +1592,43 @@ footer {
 
   .etapa-resultados {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-top {
+    gap: 0.7rem;
+    align-items: center;
+    min-height: 70px;
+    padding-block: 6px;
+    padding-right: 48px;
+    justify-content: flex-start;
+  }
+
+  .header-logos {
+    gap: 0.55rem;
+    margin-right: 0;
+    margin-inline: 0;
+    justify-content: flex-start;
+  }
+
+  .logo-container {
+    padding: 6px 5px;
+  }
+
+  .logo-container img {
+    height: 66px;
+  }
+
+  .logo-ceara img {
+    width: 58px;
+    margin-right: 0;
+  }
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+    padding: 7px;
+    margin-left: 0;
   }
 }
