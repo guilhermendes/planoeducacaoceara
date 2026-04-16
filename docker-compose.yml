@@ -1,0 +1,10 @@
+services:
+  pee-site-front:
+    image: nginx:alpine
+    container_name: pee-site-front
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./:/usr/share/nginx/html:ro
+    restart: unless-stopped

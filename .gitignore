@@ -2,6 +2,11 @@ node_modules/
 artifacts/
 test-results/
 agents/
+specs/
+docs/
+nginx/
+.idea/
+tools/
 
 # Temporary local inspection scripts
 tools/inspect.spec.js
