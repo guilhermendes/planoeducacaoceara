@@ -833,11 +833,30 @@ nav.menu-principal .menu-opiniao-link::after {
 }
 
 .page-fique-metodologia .destaque-card .etapa-titulo {
+  position: relative;
   font-size: 1.08rem;
   font-weight: 700;
   line-height: 1.4;
   color: var(--color-brand-green);
+  padding-bottom: 12px;
   transition: color var(--duration-base) var(--easing-base);
+}
+
+.page-fique-metodologia .destaque-card .etapa-titulo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 44px;
+  height: 3px;
+  border-radius: var(--radius-pill);
+  background-color: #4f8a69;
+  opacity: 0;
+  transform: scaleX(0.4);
+  transform-origin: left center;
+  transition:
+    opacity var(--duration-base) var(--easing-base),
+    transform var(--duration-base) var(--easing-base);
 }
 
 .page-fique-metodologia .destaque-card-metodologia {
@@ -965,7 +984,26 @@ nav.menu-principal .menu-opiniao-link::after {
 }
 
 .page-fique:not(.page-fique-metodologia) .destaque-card-fique h3 {
+  position: relative;
   font-size: 1.16rem;
+  padding-bottom: 12px;
+}
+
+.page-fique:not(.page-fique-metodologia) .destaque-card-fique h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 44px;
+  height: 3px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-brand-orange);
+  opacity: 0;
+  transform: scaleX(0.4);
+  transform-origin: left center;
+  transition:
+    opacity var(--duration-base) var(--easing-base),
+    transform var(--duration-base) var(--easing-base);
 }
 
 .page-fique:not(.page-fique-metodologia) .destaque-card-fique p {
@@ -1018,6 +1056,12 @@ nav.menu-principal .menu-opiniao-link::after {
   color: #4f8a69;
 }
 
+.page-fique:not(.page-fique-metodologia) .destaque-card:hover h3::after,
+.page-fique:not(.page-fique-metodologia) .destaque-card:focus-visible h3::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
 .page-fique:not(.page-fique-metodologia) .destaque-card:hover .destaque-card-cta-fique .destaque-card-cta-icone,
 .page-fique:not(.page-fique-metodologia) .destaque-card:focus-visible .destaque-card-cta-fique .destaque-card-cta-icone {
   transform: translateX(3px);
@@ -1036,6 +1080,12 @@ nav.menu-principal .menu-opiniao-link::after {
 .page-fique-metodologia .destaque-card:hover .etapa-titulo,
 .page-fique-metodologia .destaque-card:focus-visible .etapa-titulo {
   color: var(--color-brand-orange);
+}
+
+.page-fique-metodologia .destaque-card:hover .etapa-titulo::after,
+.page-fique-metodologia .destaque-card:focus-visible .etapa-titulo::after {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 .page-fique-metodologia .destaque-card:hover .destaque-card-etapa-badge,
