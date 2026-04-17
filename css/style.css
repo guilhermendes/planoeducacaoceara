@@ -1183,7 +1183,7 @@ nav.menu-principal .menu-opiniao-link::after {
   content: "↓";
   position: absolute;
   left: 50%;
-  top: calc(50% - 18px);
+  top: calc(52px + 96px + 9px);
   z-index: 2;
   width: 36px;
   height: 36px;
@@ -1196,7 +1196,7 @@ nav.menu-principal .menu-opiniao-link::after {
   box-shadow: var(--shadow-card-soft);
   font-size: 1rem;
   font-weight: 700;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
 }
 
 .page-fique-metodologia-etapa-1 .destaque-card-kicker {
@@ -1210,6 +1210,39 @@ nav.menu-principal .menu-opiniao-link::after {
 
 .page-fique-metodologia-etapa-1 .destaque-card-fluxo h3 {
   color: var(--color-brand-green);
+}
+
+.page-fique-metodologia-etapa-1 .destaque-card-fluxo-principal {
+  overflow: hidden;
+  padding: 0;
+}
+
+.page-fique-metodologia-etapa-1 .destaque-card-fluxo-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 52px;
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.page-fique-metodologia-etapa-1 .destaque-card-fluxo-principal-verde .destaque-card-fluxo-header {
+  background: linear-gradient(180deg, #20583b 0%, #18452e 100%);
+}
+
+.page-fique-metodologia-etapa-1 .destaque-card-fluxo-principal-laranja .destaque-card-fluxo-header {
+  background: linear-gradient(180deg, #f48c36 0%, #da792b 100%);
+}
+
+.page-fique-metodologia-etapa-1 .destaque-card-fluxo-principal .destaque-card-kicker {
+  color: var(--color-text-inverse);
+}
+
+.page-fique-metodologia-etapa-1 .destaque-card-fluxo-principal .destaque-card-fluxo-corpo {
+  justify-content: center;
+  min-height: 96px;
+  padding: 18px 16px;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f9f6 100%);
 }
 
 .page-fique-metodologia-etapa-1 .destaque-card-fluxo .destaque-card-conteudo {
@@ -1508,7 +1541,7 @@ body.modal-open {
 }
 
 .page-fique-metodologia-etapa-1 .destaque-card-fluxo-principal {
-  border-color: rgba(244, 140, 54, 0.22);
+  border-color: rgba(32, 88, 59, 0.16);
   background: var(--gradient-card-warm);
 }
 
