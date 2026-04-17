@@ -78,7 +78,7 @@
 
   /* Layout */
   --container-max: 1200px;
-  --container-padding: 16px;
+  --container-padding: 12px;
   --header-logo-height: 76px;
   --header-gov-width: 76px;
   --header-mobile-min-height: 84px;
@@ -97,6 +97,23 @@
   --space-8: 40px;
   --space-9: 48px;
   --space-10: 56px;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: "liga";
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Base */
@@ -164,6 +181,7 @@ header {
 .header-top {
   position: relative;
   min-height: var(--header-mobile-min-height);
+  padding-inline-end: calc(43px + var(--space-3));
   padding-block: var(--space-2);
   display: flex;
   align-items: center;
@@ -175,6 +193,7 @@ header {
   align-items: center;
   justify-content: center;
   gap: 14px;
+  max-width: calc(100% - 56px);
   margin-inline: auto;
   min-width: 0;
 }
@@ -189,7 +208,7 @@ header {
   justify-content: center;
   align-self: flex-start;
   padding: 6px 8px;
-  margin-bottom: -8px;
+  transform: translateY(8px);
   border-radius: var(--radius-brand);
   background-color: var(--color-bg-base);
   box-shadow:
@@ -230,7 +249,7 @@ header {
 .menu-toggle {
   position: absolute;
   top: 50%;
-  right: 0;
+  right: var(--space-1);
   width: 43px;
   height: 43px;
   padding: var(--space-2);
@@ -547,7 +566,9 @@ nav.menu-principal .menu-opiniao-link::after {
 
 /* Layout: breadcrumb */
 .breadcrumb-section {
-  padding-top: 14px;
+  padding-block: 24px 20px;
+  background: linear-gradient(180deg, #f8fbf9 0%, #f4f8f6 100%);
+  border-bottom: 1px solid var(--color-border-soft);
 }
 
 .breadcrumb {
@@ -555,6 +576,10 @@ nav.menu-principal .menu-opiniao-link::after {
   flex-wrap: wrap;
   align-items: center;
   gap: 6px;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-pill);
+  background-color: rgba(255, 255, 255, 0.72);
   color: var(--color-text-muted);
   font-size: 0.84rem;
 }
@@ -587,24 +612,30 @@ nav.menu-principal .menu-opiniao-link::after {
 }
 
 .info-container {
-  padding-block: 24px;
+  display: grid;
+  gap: 24px;
+  padding-block: 48px;
   margin-bottom: 32px;
 }
 
+.breadcrumb-section + .info-container {
+  padding-top: 0;
+}
+
 .info-secao {
-  margin-bottom: 24px;
   padding: 24px;
   background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border-soft);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
 }
 
-.info-secao:last-child {
-  margin-bottom: 0;
+.info-secao + .info-secao {
+  margin-top: 24px;
 }
 
 .info-secao h2 {
-  margin: 0 0 24px;
+  margin: 0 0 20px;
   padding-bottom: 12px;
   font-size: 1.4rem;
   color: var(--color-brand-green);
@@ -1265,6 +1296,16 @@ nav.menu-principal .menu-opiniao-link::after {
   gap: 16px;
 }
 
+.page-fique-metodologia-etapa-1 .destaque-card-resultado .destaque-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid rgba(93, 127, 112, 0.12);
+}
+
 .page-fique-metodologia-etapa-1 .destaque-card-textual {
   border-color: rgba(32, 88, 59, 0.16);
   background: linear-gradient(180deg, #f7fbf8 0%, #edf5f0 100%);
@@ -1351,6 +1392,72 @@ nav.menu-principal .menu-opiniao-link::after {
 .page-fique-metodologia-etapa-1 .destaque-card-resultado[role="button"]:focus-visible {
   outline: 3px solid rgba(244, 140, 54, 0.28);
   outline-offset: 3px;
+}
+
+.page-fique-metodologia-etapa-cards .info-secao-fluxo {
+  padding: 24px;
+  background-color: var(--color-bg-base);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-lg);
+}
+
+.page-fique-metodologia-etapa-cards .etapa-pill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.page-fique-metodologia-etapa-cards .destaque-card-diagnostico {
+  border-color: rgba(32, 88, 59, 0.16);
+  background: linear-gradient(180deg, #f7fbf8 0%, #edf5f0 100%);
+}
+
+.page-fique-metodologia-etapa-cards .destaque-card-diagnostico .destaque-card-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 92px;
+  padding: 14px 14px;
+  text-align: left;
+}
+
+.page-fique-metodologia-etapa-cards .destaque-card-diagnostico .destaque-card-conteudo-fluxo {
+  flex-direction: row;
+  gap: 10px;
+}
+
+.page-fique-metodologia-etapa-cards .destaque-card-diagnostico h3 {
+  margin: 0;
+  color: var(--color-brand-green);
+  font-size: 1.1rem;
+  line-height: 1.25;
+  text-align: left;
+  width: 100%;
+}
+
+.page-fique-metodologia-etapa-cards .destaque-card-fluxo-icone {
+  flex: 0 0 auto;
+  font-size: 2.1rem;
+  line-height: 1;
+  color: var(--color-brand-orange);
+}
+
+.page-fique-metodologia-etapa-cards .etapa-resultados-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.page-fique-metodologia-etapa-cards .etapa-resultados-grid .destaque-card-conteudo {
+  min-height: 132px;
+  padding: 18px 18px;
+}
+
+.page-fique-metodologia-etapa-cards .etapa-resultados-grid h3 {
+  font-size: 1.05rem;
+  line-height: 1.35;
 }
 
 body.modal-open {
@@ -1800,6 +1907,65 @@ body.modal-open {
   text-wrap: pretty;
 }
 
+.page-fique-diretrizes .diretrizes-lista {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page-fique-diretrizes .diretriz-item {
+  margin: 0;
+}
+
+.page-fique-diretrizes .diretriz-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  justify-content: start;
+  gap: 14px;
+  min-height: 140px;
+  padding: 18px 18px 20px;
+  border: 1px solid rgba(32, 88, 59, 0.14);
+  border-radius: var(--radius-brand);
+  background: linear-gradient(180deg, #f8fbf9 0%, #eef5f1 100%);
+  box-shadow: 0 10px 24px rgba(18, 50, 36, 0.05);
+}
+
+.page-fique-diretrizes .diretriz-numero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 8px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #5d6b64 0%, #414b46 100%);
+  color: var(--color-text-inverse);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.page-fique-diretrizes .diretriz-card p {
+  margin: 0;
+  width: 100%;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  text-align: left;
+  color: var(--color-text-base);
+}
+
+@media (min-width: 768px) {
+  .page-fique-diretrizes .diretrizes-lista {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 /* Layout: footer */
 footer {
   padding: 40px 16px;
@@ -1966,6 +2132,7 @@ footer {
 /* Responsive: 769px */
 @media (min-width: 769px) {
   :root {
+    --container-padding: 16px;
     --header-logo-height: 88px;
     --header-gov-width: 88px;
     --hero-min-height: calc(100svh - 110px);
@@ -1978,6 +2145,7 @@ footer {
   .header-top {
     min-height: auto;
     justify-content: flex-start;
+    padding-inline-end: 0;
     padding-block: 0;
   }
 
@@ -1990,6 +2158,7 @@ footer {
   .header-logos {
     justify-content: flex-start;
     gap: 16px;
+    max-width: none;
     margin-inline: 0;
   }
 
@@ -2011,13 +2180,10 @@ footer {
     transform: translate3d(0, var(--hero-parallax-offset), 0) scale(1.05);
   }
 
-  .breadcrumb-section {
-    padding-top: 14px;
-  }
-
   .breadcrumb {
     font-size: 0.9rem;
     gap: 9px;
+    padding: 12px 18px;
   }
 
   .cartoes-container {
@@ -2026,12 +2192,8 @@ footer {
     padding-block: 48px;
   }
 
-  .info-container {
-    padding-block: 48px;
-  }
-
   .info-secao {
-    margin-bottom: 24px;
+    padding: 28px;
   }
 
   .info-secao h2 {
@@ -2077,15 +2239,15 @@ footer {
   }
 
   .header-container {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
     align-items: center;
     gap: 16px;
     padding-bottom: 3px;
   }
 
   .header-top {
-    flex: 0 0 auto;
-    align-items: flex-start;
+    display: block;
     gap: 12px;
   }
 
@@ -2101,7 +2263,7 @@ footer {
 
   .logo-container {
     padding: 10px 12px;
-    margin-bottom: -14px;
+    transform: translateY(14px);
   }
 
   .logo-ceara {
@@ -2111,13 +2273,13 @@ footer {
 
   .header-acoes {
     width: auto;
-    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 6px;
     pointer-events: none;
     align-self: center;
+    margin-left: 4px;
   }
 
   .header-acoes a {
@@ -2135,15 +2297,13 @@ footer {
   }
 
   nav.menu-principal {
-    flex: 1 1 auto;
-    align-self: center;
     min-width: 0;
     max-height: none;
     overflow: visible;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    gap: 9px;
+    gap: 8px;
     margin: 0;
     padding: 0;
     border-radius: 0;
@@ -2158,8 +2318,8 @@ footer {
 
   nav.menu-principal a {
     width: auto;
-    padding: 7px 5px 8px;
-    font-size: 0.88rem;
+    padding: 7px 4px 8px;
+    font-size: 0.84rem;
     white-space: nowrap;
     border-bottom: 0;
     border-radius: var(--radius-pill);
@@ -2214,6 +2374,10 @@ footer {
 
   .hero-interno .hero-conteudo h1 {
     font-size: 2.2rem;
+  }
+
+  .breadcrumb-section {
+    padding-block: 28px 24px;
   }
 
   .cartoes-container {
@@ -2289,6 +2453,19 @@ footer {
 
   .logo-ceara img {
     width: 82px;
+  }
+}
+
+/* Responsive: 1440px */
+@media (min-width: 1440px) {
+  .hero-conteudo {
+    max-width: 660px;
+  }
+
+  .page-home .cartoes-container,
+  .page-fique .destaques-grid,
+  .footer-container {
+    max-width: var(--container-max);
   }
 }
 
