@@ -942,8 +942,8 @@ nav.menu-principal .menu-opiniao-link::after {
   box-shadow: none;
 }
 
-.page-fique-metodologia .destaque-card-metodologia img {
-  aspect-ratio: 16 / 9;
+.page-fique-metodologia .destaque-card-metodologia img,
+.page-fique:not(.page-fique-metodologia) .destaque-card-fique img {
   border-radius: 0;
 }
 
@@ -1045,10 +1045,6 @@ nav.menu-principal .menu-opiniao-link::after {
 
 .page-fique:not(.page-fique-metodologia) .destaque-card-fique .destaque-card-media {
   isolation: isolate;
-}
-
-.page-fique:not(.page-fique-metodologia) .destaque-card-fique img {
-  aspect-ratio: 16 / 9;
 }
 
 .page-fique:not(.page-fique-metodologia) .destaque-card-fique .destaque-card-conteudo {
@@ -1166,20 +1162,12 @@ nav.menu-principal .menu-opiniao-link::after {
 }
 
 @media (min-width: 769px) {
-  .page-fique-metodologia .destaque-card-metodologia img {
-    aspect-ratio: 16 / 9;
-  }
-
   .page-fique-metodologia .destaque-card-metodologia .destaque-card-conteudo {
     min-height: 220px;
   }
 }
 
 @media (min-width: 1024px) {
-  .page-fique-metodologia .destaque-card-metodologia img {
-    aspect-ratio: 16 / 9;
-  }
-
   .page-fique-metodologia .destaque-card-metodologia .destaque-card-conteudo {
     min-height: 232px;
   }
@@ -2394,12 +2382,9 @@ footer {
   }
 
 
-  .destaque-card img {
-    aspect-ratio: 4 / 5;
-  }
-
-  .page-fique-metodologia .destaque-card-metodologia img {
-    aspect-ratio: 16 / 9;
+  .destaque-card img,
+  .page-fique .destaque-card img {
+    aspect-ratio: 4 / 3;
   }
 
   .footer-container {
