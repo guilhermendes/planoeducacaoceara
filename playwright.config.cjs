@@ -4,7 +4,8 @@ const baseURL = process.env.PLAYWRIGHT_BASE_URL || "http://127.0.0.1:3000";
 
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 module.exports = {
-  testDir: path.join(__dirname, "specs"),
+  testDir: path.join(__dirname, "devtools", "specs"),
+  outputDir: path.join(__dirname, "devtools", "test-results"),
   timeout: 60_000,
   expect: {
     timeout: 10_000,

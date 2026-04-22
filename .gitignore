@@ -1,13 +1,14 @@
-node_modules/
-artifacts/
-test-results/
-agents/
-specs/
+
+devtools/artifacts/
+devtools/agents/
+devtools/artifacts/
+devtools/test-results/
+devtools/specs/
 docs/
-nginx/
+node_modules/
 .idea/
 tools/
 
 # Temporary local inspection scripts
-tools/inspect.spec.js
-tools/playwright-inspect.mjs
+devtools/tools/inspect.spec.js
+devtools/tools/playwright-inspect.mjs
