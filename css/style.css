@@ -984,6 +984,14 @@ nav.menu-principal .menu-opiniao-link::after {
   color: #607166;
 }
 
+.page-lives .destaque-card-metodologia p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
 .page-fique-metodologia .destaque-card-footer {
   display: flex;
   align-items: center;
