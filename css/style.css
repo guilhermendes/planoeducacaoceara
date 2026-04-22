@@ -1158,6 +1158,11 @@ body.page-home.page-fique .destaque-card-fique .destaque-card-footer {
   transform: scaleX(1);
 }
 
+body.page-home.page-fique .destaque-card:hover h3::after,
+body.page-home.page-fique .destaque-card:focus-visible h3::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
 .page-fique:not(.page-fique-metodologia) .destaque-card:hover .destaque-card-cta-fique .destaque-card-cta-icone,
 .page-fique:not(.page-fique-metodologia) .destaque-card:focus-visible .destaque-card-cta-fique .destaque-card-cta-icone {
   transform: translateX(3px);
