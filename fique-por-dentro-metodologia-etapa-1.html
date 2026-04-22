@@ -16,6 +16,8 @@
 </head>
 
 <body class="page-content page-methodology page-methodology-step-1">
+    <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo principal</a>
+
 
     <header>
         <div class="header-container">
@@ -29,32 +31,34 @@
                     </div>
                 </div>
 
-                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-controls="menuPrincipal" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
             </div>
 
-            <nav class="menu-principal" id="menuPrincipal">
+            <nav class="menu-principal" id="menuPrincipal" aria-label="Principal" aria-hidden="true">
                 <a href="index.html">Início</a>
                 <a href="fique-por-dentro.html">Fique por dentro</a>
                 <a href="relatorios.html">Relatórios</a>
                 <a href="diagnostico.html">Diagnóstico</a>
                 <a href="arquivos.html">Arquivos</a>
                 <a href="lives.html">Lives</a>
-                <a href="#" class="btn-acao menu-opiniao-link"><span class="material-symbols-outlined btn-icone"
-                        aria-hidden="true">comment</span>Deixe sua opinião</a>
+                <button type="button" class="btn-acao menu-opiniao-link" disabled><span class="material-symbols-outlined btn-icone"
+                        aria-hidden="true">comment</span>Deixe sua opinião</button>
             </nav>
 
             <div class="header-acoes">
-                <a href="#" class="btn-acao btn-header-acao"><span class="material-symbols-outlined btn-icone"
-                        aria-hidden="true">comment</span>Deixe sua opinião</a>
+                <button type="button" class="btn-acao btn-header-acao" disabled><span class="material-symbols-outlined btn-icone"
+                        aria-hidden="true">comment</span>Deixe sua opinião</button>
             </div>
         </div>
     </header>
 
-    <section class="hero hero-interno">
+    <main id="conteudo-principal" tabindex="-1">
+
+        <section class="hero hero-interno">
         <div class="container">
             <div class="hero-conteudo">
                 <h1>1ª Etapa</h1>
@@ -65,7 +69,7 @@
 
     <section class="breadcrumb-section" aria-label="Migalha de pão">
         <div class="container">
-            <nav class="breadcrumb">
+            <nav class="breadcrumb" aria-label="Migalha de pão">
                 <a href="index.html">Início</a>
                 <span aria-hidden="true">/</span>
                 <a href="fique-por-dentro.html">Fique por dentro</a>
@@ -126,57 +130,59 @@
                 <p>A qualidade de um Plano Decenal de Educação, ou seja, do Plano Estadual de Educação do Ceará está diretamente associada à sua elaboração. Nesse sentido, devem ser consideradas as dimensões a seguir.</p>
 
                 <div class="destaques-grid destaque-resultados-grid">
-                    <article class="destaque-card destaque-card-textual destaque-card-resultado" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="modal-comissao-intersetorial" data-modal-target="modal-comissao-intersetorial">
-                        <div class="destaque-card-conteudo">
-                            <h3 class="destaque-card-titulo-icone">
+                    <button type="button" class="destaque-card destaque-card-textual destaque-card-resultado" aria-haspopup="dialog" aria-controls="modal-comissao-intersetorial" data-modal-target="modal-comissao-intersetorial">
+                        <span class="destaque-card-conteudo">
+                            <span class="destaque-card-titulo-icone">
                                 <span class="material-symbols-outlined destaque-card-titulo-simbolo" aria-hidden="true">groups</span>
                                 <span>Comissão<br>Intersetorial</span>
-                            </h3>
+                            </span>
                             <span class="destaque-card-footer">
                                 <span class="destaque-card-cta">Exibir<span class="material-symbols-outlined destaque-card-cta-icone" aria-hidden="true">arrow_forward</span></span>
                             </span>
-                        </div>
-                    </article>
+                        </span>
+                    </button>
 
-                    <article class="destaque-card destaque-card-textual destaque-card-resultado" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="modal-subcomissoes" data-modal-target="modal-subcomissoes">
-                        <div class="destaque-card-conteudo">
-                            <h3 class="destaque-card-titulo-icone">
+                    <button type="button" class="destaque-card destaque-card-textual destaque-card-resultado" aria-haspopup="dialog" aria-controls="modal-subcomissoes" data-modal-target="modal-subcomissoes">
+                        <span class="destaque-card-conteudo">
+                            <span class="destaque-card-titulo-icone">
                                 <span class="material-symbols-outlined destaque-card-titulo-simbolo" aria-hidden="true">account_tree</span>
                                 <span>Subcomissões</span>
-                            </h3>
+                            </span>
                             <span class="destaque-card-footer">
                                 <span class="destaque-card-cta">Exibir<span class="material-symbols-outlined destaque-card-cta-icone" aria-hidden="true">arrow_forward</span></span>
                             </span>
-                        </div>
-                    </article>
+                        </span>
+                    </button>
 
-                    <article class="destaque-card destaque-card-textual destaque-card-resultado" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="modal-cronograma-atividades" data-modal-target="modal-cronograma-atividades">
-                        <div class="destaque-card-conteudo">
-                            <h3 class="destaque-card-titulo-icone">
+                    <button type="button" class="destaque-card destaque-card-textual destaque-card-resultado" aria-haspopup="dialog" aria-controls="modal-cronograma-atividades" data-modal-target="modal-cronograma-atividades">
+                        <span class="destaque-card-conteudo">
+                            <span class="destaque-card-titulo-icone">
                                 <span class="material-symbols-outlined destaque-card-titulo-simbolo" aria-hidden="true">calendar_month</span>
                                 <span>Cronograma de<br>Atividades</span>
-                            </h3>
+                            </span>
                             <span class="destaque-card-footer">
                                 <span class="destaque-card-cta">Exibir<span class="material-symbols-outlined destaque-card-cta-icone" aria-hidden="true">arrow_forward</span></span>
                             </span>
-                        </div>
-                    </article>
+                        </span>
+                    </button>
 
-                    <article class="destaque-card destaque-card-textual destaque-card-resultado">
-                        <div class="destaque-card-conteudo">
-                            <h3 class="destaque-card-titulo-icone">
+                    <a href="cronograma-etapas.html" class="destaque-card destaque-card-textual destaque-card-resultado">
+                        <span class="destaque-card-conteudo">
+                            <span class="destaque-card-titulo-icone">
                                 <span class="material-symbols-outlined destaque-card-titulo-simbolo" aria-hidden="true">moving</span>
                                 <span>Cronograma das<br>etapas</span>
-                            </h3>
-                            <span class="destaque-card-footer">
-                                <span class="destaque-card-cta">Exibir<span class="material-symbols-outlined destaque-card-cta-icone" aria-hidden="true">arrow_forward</span></span>
                             </span>
-                        </div>
-                    </article>
+                            <span class="destaque-card-footer">
+                                <span class="destaque-card-cta">Acessar<span class="material-symbols-outlined destaque-card-cta-icone" aria-hidden="true">arrow_forward</span></span>
+                            </span>
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
+
+    </main>
 
     <div class="modal-overlay" id="modal-comissao-intersetorial" aria-hidden="true">
         <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-comissao-titulo">
@@ -416,10 +422,10 @@
             </nav>
 
             <div class="footer-acoes">
-                <a href="#" class="btn-acao-secundaria"><span class="material-symbols-outlined btn-icone"
-                        aria-hidden="true">contact_support</span>FAQs</a>
-                <a href="#" class="btn-acao"><span class="material-symbols-outlined btn-icone"
-                        aria-hidden="true">comment</span>Deixe sua opinião</a>
+                <button type="button" class="btn-acao-secundaria" disabled><span class="material-symbols-outlined btn-icone"
+                        aria-hidden="true">contact_support</span>FAQs</button>
+                <button type="button" class="btn-acao" disabled><span class="material-symbols-outlined btn-icone"
+                        aria-hidden="true">comment</span>Deixe sua opinião</button>
             </div>
         </div>
     </footer>
@@ -480,12 +486,6 @@
                 openModal(targetModal);
             });
 
-            trigger.addEventListener('keydown', function (event) {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    openModal(targetModal);
-                }
-            });
         });
 
         modalCloseButtons.forEach(button => {
@@ -508,6 +508,7 @@
             }
         });
     </script>
+    <script src="js/site.js"></script>
 
 </body>
 

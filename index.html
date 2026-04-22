@@ -17,6 +17,8 @@
 </head>
 
 <body class="page-home page-content">
+    <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo principal</a>
+
 
     <header>
         <div class="header-container">
@@ -30,32 +32,34 @@
                     </div>
                 </div>
 
-                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-controls="menuPrincipal" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
             </div>
 
-            <nav class="menu-principal" id="menuPrincipal">
+            <nav class="menu-principal" id="menuPrincipal" aria-label="Principal" aria-hidden="true">
                 <a href="index.html">Início</a>
                 <a href="fique-por-dentro.html">Fique por dentro</a>
                 <a href="relatorios.html">Relatórios</a>
                 <a href="diagnostico.html">Diagnóstico</a>
                 <a href="arquivos.html">Arquivos</a>
                 <a href="lives.html">Lives</a>
-                <a href="#" class="btn-acao menu-opiniao-link"><span class="material-symbols-outlined btn-icone"
-                        aria-hidden="true">comment</span>Deixe sua opinião</a>
+                <button type="button" class="btn-acao menu-opiniao-link" disabled><span class="material-symbols-outlined btn-icone"
+                        aria-hidden="true">comment</span>Deixe sua opinião</button>
             </nav>
 
             <div class="header-acoes">
-                <a href="#" class="btn-acao btn-header-acao"><span class="material-symbols-outlined btn-icone"
-                        aria-hidden="true">comment</span>Deixe sua opinião</a>
+                <button type="button" class="btn-acao btn-header-acao" disabled><span class="material-symbols-outlined btn-icone"
+                        aria-hidden="true">comment</span>Deixe sua opinião</button>
             </div>
         </div>
     </header>
 
-    <section class="hero">
+    <main id="conteudo-principal" tabindex="-1">
+
+        <section class="hero">
         <div class="container">
             <div class="hero-conteudo">
                 <h1>Planos Decenais <br />de Educação</h1>
@@ -153,6 +157,7 @@
             </div>
         </div>
     </section>
+    </main>
     <footer>
         <div class="footer-container">
             <div class="footer-brand">
@@ -171,10 +176,10 @@
             </nav>
 
             <div class="footer-acoes">
-                <a href="#" class="btn-acao-secundaria"><span class="material-symbols-outlined btn-icone"
-                        aria-hidden="true">contact_support</span>FAQs</a>
-                <a href="#" class="btn-acao"><span class="material-symbols-outlined btn-icone"
-                        aria-hidden="true">comment</span>Deixe sua opinião</a>
+                <button type="button" class="btn-acao-secundaria" disabled><span class="material-symbols-outlined btn-icone"
+                        aria-hidden="true">contact_support</span>FAQs</button>
+                <button type="button" class="btn-acao" disabled><span class="material-symbols-outlined btn-icone"
+                        aria-hidden="true">comment</span>Deixe sua opinião</button>
             </div>
         </div>
     </footer>
@@ -257,6 +262,7 @@
         window.addEventListener('resize', updateHeroParallax);
         prefersReducedMotion.addEventListener('change', updateHeroParallax);
     </script>
+    <script src="js/site.js"></script>
 
 </body>
 

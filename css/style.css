@@ -134,6 +134,10 @@ body {
   background-color: var(--color-bg-page);
 }
 
+main:focus {
+  outline: none;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -149,6 +153,29 @@ input,
 textarea,
 select {
   font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(244, 140, 54, 0.72);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1000;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-text-inverse);
+  color: var(--color-text-green);
+  font-weight: 700;
+  transform: translateY(-150%);
+  transition: transform var(--duration-fast) var(--easing-base);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
 }
 
 .container {
@@ -323,7 +350,7 @@ nav.menu-principal.active {
   padding-block: 14px;
 }
 
-nav.menu-principal a {
+nav.menu-principal :is(a, button) {
   position: relative;
   width: 100%;
   min-height: 44px;
@@ -343,7 +370,7 @@ nav.menu-principal a {
     box-shadow 0.25s ease;
 }
 
-nav.menu-principal a::after {
+nav.menu-principal :is(a, button)::after {
   content: "";
   position: absolute;
   left: 16px;
@@ -360,21 +387,21 @@ nav.menu-principal a::after {
     opacity 0.25s ease;
 }
 
-nav.menu-principal a:hover,
-nav.menu-principal a:focus-visible {
+nav.menu-principal :is(a, button):hover,
+nav.menu-principal :is(a, button):focus-visible {
   background-color: var(--color-bg-overlay);
   box-shadow:
     inset 0 0 0 1px var(--color-border-inverse-soft),
     var(--shadow-hover-outline);
 }
 
-nav.menu-principal a:hover::after,
-nav.menu-principal a:focus-visible::after {
+nav.menu-principal :is(a, button):hover::after,
+nav.menu-principal :is(a, button):focus-visible::after {
   transform: scaleX(1);
   opacity: 1;
 }
 
-nav.menu-principal a:last-child {
+nav.menu-principal :is(a, button):last-child {
   border-bottom: 0;
 }
 
@@ -459,6 +486,11 @@ nav.menu-principal .menu-opiniao-link::after {
 
 .btn-acao-secundaria {
   background-color: var(--color-brand-green-soft);
+}
+
+.btn-acao:disabled,
+.btn-acao-secundaria:disabled {
+  cursor: not-allowed;
 }
 
 .btn-acao-secundaria:hover,
@@ -1471,11 +1503,21 @@ body.page-home.page-content .destaque-card:focus-visible h3::after {
   transform: translateX(3px);
 }
 
-.page-methodology-step-1 .destaque-card-resultado[role="button"] {
+.page-methodology-step-1 button.destaque-card-resultado {
   user-select: none;
 }
 
-.page-methodology-step-1 .destaque-card-resultado[role="button"]:focus-visible {
+.page-methodology-step-1 button.destaque-card-resultado {
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--color-border-base);
+  font: inherit;
+  text-align: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.page-methodology-step-1 .destaque-card-resultado:focus-visible {
   outline: 3px solid rgba(244, 140, 54, 0.28);
   outline-offset: 3px;
 }
@@ -2655,18 +2697,18 @@ footer {
 }
 
 @media (max-width: 480px) {
-  body.page-home.page-content .destaque-card {
+  .page-home.page-content .destaque-card {
     display: grid;
     grid-template-columns: 104px minmax(0, 1fr);
     align-items: stretch;
   }
 
-  body.page-home.page-content .destaque-card .destaque-card-media {
+  .page-home.page-content .destaque-card .destaque-card-media {
     min-height: 0;
     background-color: #e9f3eb;
   }
 
-  body.page-home.page-content .destaque-card img {
+  .page-home.page-content .destaque-card img {
     height: 100%;
     min-height: 124px;
     aspect-ratio: auto;
@@ -2674,13 +2716,13 @@ footer {
     object-position: center;
   }
 
-  body.page-home.page-content .destaque-card .destaque-card-icone {
+  .page-home.page-content .destaque-card .destaque-card-icone {
     width: 44px;
     height: 44px;
     font-size: 40px;
   }
 
-  body.page-home.page-content .destaque-card .destaque-card-conteudo {
+  .page-home.page-content .destaque-card .destaque-card-conteudo {
     align-items: flex-start;
     gap: 8px;
     min-width: 0;
@@ -2688,37 +2730,37 @@ footer {
     text-align: left;
   }
 
-  body.page-home.page-content .destaque-card h3,
-  body.page-home.page-content .destaque-card p {
+  .page-home.page-content .destaque-card h3,
+  .page-home.page-content .destaque-card p {
     text-align: left;
   }
 
-  body.page-home.page-content .destaque-card h3 {
+  .page-home.page-content .destaque-card h3 {
     width: 100%;
     padding-bottom: 8px;
     font-size: 1rem;
     line-height: 1.25;
   }
 
-  body.page-home.page-content .destaque-card h3::after {
+  .page-home.page-content .destaque-card h3::after {
     left: 0;
     width: 34px;
     transform: scaleX(0.4);
     transform-origin: left center;
   }
 
-  body.page-home.page-content .destaque-card p {
+  .page-home.page-content .destaque-card p {
     font-size: 0.86rem;
     line-height: 1.45;
   }
 
-  body.page-home.page-content .destaque-card .destaque-card-footer {
+  .page-home.page-content .destaque-card .destaque-card-footer {
     justify-content: flex-start;
     margin-top: 2px;
     padding-top: 8px;
   }
 
-  body.page-home.page-content .destaque-card .destaque-card-cta-link {
+  .page-home.page-content .destaque-card .destaque-card-cta-link {
     --destaque-card-cta-font-size: 0.76rem;
     min-height: 34px;
     margin-top: 0;
@@ -2727,18 +2769,33 @@ footer {
 }
 
 @media (max-width: 425px) {
-  body.page-content-overview .destaque-card {
+  :is(
+    .page-content-overview .destaque-card,
+    .page-methodology-overview .destaque-card-metodologia,
+    .page-files .destaque-card-metodologia,
+    .page-lives .destaque-card-metodologia
+  ) {
     display: grid;
     grid-template-columns: 104px minmax(0, 1fr);
     align-items: stretch;
   }
 
-  body.page-content-overview .destaque-card .destaque-card-media {
+  :is(
+    .page-content-overview .destaque-card,
+    .page-methodology-overview .destaque-card-metodologia,
+    .page-files .destaque-card-metodologia,
+    .page-lives .destaque-card-metodologia
+  ) .destaque-card-media {
     min-height: 0;
     background-color: #e9f3eb;
   }
 
-  body.page-content-overview .destaque-card img {
+  :is(
+    .page-content-overview .destaque-card,
+    .page-methodology-overview .destaque-card-metodologia,
+    .page-files .destaque-card-metodologia,
+    .page-lives .destaque-card-metodologia
+  ) img {
     height: 100%;
     min-height: 124px;
     aspect-ratio: auto;
@@ -2746,13 +2803,23 @@ footer {
     object-position: center;
   }
 
-  body.page-content-overview .destaque-card .destaque-card-icone {
+  :is(
+    .page-content-overview .destaque-card,
+    .page-methodology-overview .destaque-card-metodologia,
+    .page-files .destaque-card-metodologia,
+    .page-lives .destaque-card-metodologia
+  ) .destaque-card-icone {
     width: 44px;
     height: 44px;
     font-size: 40px;
   }
 
-  body.page-content-overview .destaque-card .destaque-card-conteudo {
+  :is(
+    .page-content-overview .destaque-card,
+    .page-methodology-overview .destaque-card-metodologia,
+    .page-files .destaque-card-metodologia,
+    .page-lives .destaque-card-metodologia
+  ) .destaque-card-conteudo {
     align-items: flex-start;
     gap: 8px;
     min-width: 0;
@@ -2760,264 +2827,97 @@ footer {
     text-align: left;
   }
 
-  body.page-content-overview .destaque-card h3,
-  body.page-content-overview .destaque-card p {
+  :is(
+    .page-content-overview .destaque-card,
+    .page-methodology-overview .destaque-card-metodologia,
+    .page-files .destaque-card-metodologia,
+    .page-lives .destaque-card-metodologia
+  ) :is(h3, p) {
     text-align: left;
   }
 
-  body.page-content-overview .destaque-card h3 {
+  :is(
+    .page-content-overview .destaque-card,
+    .page-methodology-overview .destaque-card-metodologia,
+    .page-files .destaque-card-metodologia,
+    .page-lives .destaque-card-metodologia
+  ) h3 {
     width: 100%;
     padding-bottom: 8px;
+  }
+
+  .page-content-overview .destaque-card h3 {
     font-size: 1rem;
     line-height: 1.25;
   }
 
-  body.page-content-overview .destaque-card h3::after {
+  .page-content-overview .destaque-card h3::after {
     left: 0;
     width: 34px;
     transform: scaleX(0.4);
     transform-origin: left center;
   }
 
-  body.page-content-overview .destaque-card p {
+  :is(
+    .page-content-overview .destaque-card,
+    .page-methodology-overview .destaque-card-metodologia,
+    .page-files .destaque-card-metodologia,
+    .page-lives .destaque-card-metodologia
+  ) p {
     font-size: 0.86rem;
     line-height: 1.45;
   }
 
-  body.page-content-overview .destaque-card .destaque-card-footer {
+  :is(
+    .page-content-overview .destaque-card,
+    .page-methodology-overview .destaque-card-metodologia,
+    .page-files .destaque-card-metodologia,
+    .page-lives .destaque-card-metodologia
+  ) .destaque-card-footer {
     justify-content: flex-start;
     margin-top: 2px;
     padding-top: 8px;
   }
 
-  body.page-content-overview .destaque-card .destaque-card-cta-link {
+  :is(
+    .page-content-overview .destaque-card .destaque-card-cta-link,
+    .page-methodology-overview .destaque-card-metodologia .destaque-card-cta,
+    .page-files .destaque-card-metodologia .destaque-card-cta,
+    .page-lives .destaque-card-metodologia .destaque-card-cta
+  ) {
     --destaque-card-cta-font-size: 0.76rem;
     min-height: 34px;
     margin-top: 0;
     padding: 8px 11px;
   }
 
-  body.page-methodology-overview .destaque-card-metodologia {
-    display: grid;
-    grid-template-columns: 104px minmax(0, 1fr);
-    align-items: stretch;
-  }
-
-  body.page-methodology-overview .destaque-card-metodologia .destaque-card-media {
-    min-height: 0;
-    background-color: #e9f3eb;
-  }
-
-  body.page-methodology-overview .destaque-card-metodologia img {
-    height: 100%;
-    min-height: 124px;
-    aspect-ratio: auto;
-    object-fit: contain;
-    object-position: center;
-  }
-
-  body.page-methodology-overview .destaque-card-metodologia .destaque-card-icone {
-    width: 44px;
-    height: 44px;
-    font-size: 40px;
-  }
-
-  body.page-methodology-overview .destaque-card-metodologia .destaque-card-conteudo {
-    align-items: flex-start;
-    gap: 8px;
-    min-width: 0;
-    padding: 14px 14px 14px 16px;
-    text-align: left;
-  }
-
-  body.page-methodology-overview .destaque-card-metodologia h3,
-  body.page-methodology-overview .destaque-card-metodologia p {
-    text-align: left;
-  }
-
-  body.page-methodology-overview .destaque-card-metodologia h3 {
-    width: 100%;
-    padding-bottom: 8px;
-  }
-
-  body.page-methodology-overview .destaque-card-metodologia .etapa-label {
+  :is(.page-methodology-overview, .page-files) .destaque-card-metodologia .etapa-label {
     font-size: 0.76rem;
   }
 
-  body.page-methodology-overview .destaque-card-metodologia .etapa-titulo {
+  :is(
+    .page-methodology-overview,
+    .page-files,
+    .page-lives
+  ) .destaque-card-metodologia .etapa-titulo {
     padding-bottom: 0;
     font-size: 0.98rem;
     line-height: 1.25;
   }
 
-  body.page-methodology-overview .destaque-card-metodologia .etapa-titulo::after {
+  :is(
+    .page-methodology-overview,
+    .page-files,
+    .page-lives
+  ) .destaque-card-metodologia .etapa-titulo::after {
     display: none;
   }
 
-  body.page-methodology-overview .destaque-card-metodologia p {
-    font-size: 0.86rem;
-    line-height: 1.45;
-  }
-
-  body.page-methodology-overview .destaque-card-metodologia .destaque-card-footer {
-    justify-content: flex-start;
-    margin-top: 2px;
-    padding-top: 8px;
-  }
-
-  body.page-methodology-overview .destaque-card-metodologia .destaque-card-cta {
-    --destaque-card-cta-font-size: 0.76rem;
-    min-height: 34px;
-    margin-top: 0;
-    padding: 8px 11px;
-    white-space: normal;
-  }
-
-  body.page-files .destaque-card-metodologia {
-    display: grid;
-    grid-template-columns: 104px minmax(0, 1fr);
-    align-items: stretch;
-  }
-
-  body.page-files .destaque-card-metodologia .destaque-card-media {
-    min-height: 0;
-    background-color: #e9f3eb;
-  }
-
-  body.page-files .destaque-card-metodologia img {
-    height: 100%;
-    min-height: 124px;
-    aspect-ratio: auto;
-    object-fit: contain;
-    object-position: center;
-  }
-
-  body.page-files .destaque-card-metodologia .destaque-card-icone {
-    width: 44px;
-    height: 44px;
-    font-size: 40px;
-  }
-
-  body.page-files .destaque-card-metodologia .destaque-card-conteudo {
-    align-items: flex-start;
-    gap: 8px;
-    min-width: 0;
-    padding: 14px 14px 14px 16px;
-    text-align: left;
-  }
-
-  body.page-files .destaque-card-metodologia h3,
-  body.page-files .destaque-card-metodologia p {
-    text-align: left;
-  }
-
-  body.page-files .destaque-card-metodologia h3 {
-    width: 100%;
-    padding-bottom: 8px;
-  }
-
-  body.page-files .destaque-card-metodologia .etapa-label {
-    font-size: 0.76rem;
-  }
-
-  body.page-files .destaque-card-metodologia .etapa-titulo {
-    padding-bottom: 0;
-    font-size: 0.98rem;
-    line-height: 1.25;
-  }
-
-  body.page-files .destaque-card-metodologia .etapa-titulo::after {
-    display: none;
-  }
-
-  body.page-files .destaque-card-metodologia p {
-    font-size: 0.86rem;
-    line-height: 1.45;
-  }
-
-  body.page-files .destaque-card-metodologia .destaque-card-footer {
-    justify-content: flex-start;
-    margin-top: 2px;
-    padding-top: 8px;
-  }
-
-  body.page-files .destaque-card-metodologia .destaque-card-cta {
-    --destaque-card-cta-font-size: 0.76rem;
-    min-height: 34px;
-    margin-top: 0;
-    padding: 8px 11px;
-    white-space: normal;
-  }
-
-  body.page-lives .destaque-card-metodologia {
-    display: grid;
-    grid-template-columns: 104px minmax(0, 1fr);
-    align-items: stretch;
-  }
-
-  body.page-lives .destaque-card-metodologia .destaque-card-media {
-    min-height: 0;
-    background-color: #e9f3eb;
-  }
-
-  body.page-lives .destaque-card-metodologia img {
-    height: 100%;
-    min-height: 124px;
-    aspect-ratio: auto;
-    object-fit: contain;
-    object-position: center;
-  }
-
-  body.page-lives .destaque-card-metodologia .destaque-card-icone {
-    width: 44px;
-    height: 44px;
-    font-size: 40px;
-  }
-
-  body.page-lives .destaque-card-metodologia .destaque-card-conteudo {
-    align-items: flex-start;
-    gap: 8px;
-    min-width: 0;
-    padding: 14px 14px 14px 16px;
-    text-align: left;
-  }
-
-  body.page-lives .destaque-card-metodologia h3,
-  body.page-lives .destaque-card-metodologia p {
-    text-align: left;
-  }
-
-  body.page-lives .destaque-card-metodologia h3 {
-    width: 100%;
-    padding-bottom: 8px;
-  }
-
-  body.page-lives .destaque-card-metodologia .etapa-titulo {
-    padding-bottom: 0;
-    font-size: 0.98rem;
-    line-height: 1.25;
-  }
-
-  body.page-lives .destaque-card-metodologia .etapa-titulo::after {
-    display: none;
-  }
-
-  body.page-lives .destaque-card-metodologia p {
-    font-size: 0.86rem;
-    line-height: 1.45;
-  }
-
-  body.page-lives .destaque-card-metodologia .destaque-card-footer {
-    justify-content: flex-start;
-    margin-top: 2px;
-    padding-top: 8px;
-  }
-
-  body.page-lives .destaque-card-metodologia .destaque-card-cta {
-    --destaque-card-cta-font-size: 0.76rem;
-    min-height: 34px;
-    margin-top: 0;
-    padding: 8px 11px;
+  :is(
+    .page-methodology-overview,
+    .page-files,
+    .page-lives
+  ) .destaque-card-metodologia .destaque-card-cta {
     white-space: normal;
   }
 }
@@ -3175,7 +3075,7 @@ footer {
     margin-left: 4px;
   }
 
-  .header-acoes a {
+  .header-acoes :is(a, button) {
     pointer-events: auto;
     text-align: center;
   }
@@ -3209,7 +3109,7 @@ footer {
     padding: 0;
   }
 
-  nav.menu-principal a {
+  nav.menu-principal :is(a, button) {
     width: auto;
     padding: 7px 4px 8px;
     font-size: 0.84rem;
@@ -3218,7 +3118,7 @@ footer {
     border-radius: var(--radius-pill);
   }
 
-  nav.menu-principal a::after {
+  nav.menu-principal :is(a, button)::after {
     left: 0.8rem;
     right: 0.8rem;
     bottom: 0.35rem;
@@ -3322,7 +3222,7 @@ footer {
     gap: 12px;
   }
 
-  nav.menu-principal a {
+  nav.menu-principal :is(a, button) {
     padding: 7px 6px 8px;
     font-size: 0.9rem;
   }
@@ -3339,7 +3239,7 @@ footer {
     gap: 17px;
   }
 
-  nav.menu-principal a {
+  nav.menu-principal :is(a, button) {
     padding: 7px 6px 8px;
     font-size: 0.95rem;
   }
