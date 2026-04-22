@@ -1055,6 +1055,17 @@ nav.menu-principal .menu-opiniao-link::after {
   isolation: isolate;
 }
 
+body.page-home.page-fique .destaque-card-fique .destaque-card-media {
+  min-height: 132px;
+  background-color: #f4f8f6;
+}
+
+body.page-home.page-fique .destaque-card-fique img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
 .page-fique:not(.page-fique-metodologia) .destaque-card-fique .destaque-card-conteudo {
   gap: 12px;
   padding: 20px 20px 22px;
@@ -1094,6 +1105,27 @@ nav.menu-principal .menu-opiniao-link::after {
   margin-top: auto;
   padding-top: 14px;
   border-top: 1px solid rgba(93, 127, 112, 0.12);
+}
+
+body.page-home.page-fique .destaque-card-fique .destaque-card-conteudo {
+  align-items: center;
+  text-align: center;
+}
+
+body.page-home.page-fique .destaque-card-fique h3,
+body.page-home.page-fique .destaque-card-fique p {
+  text-align: center;
+}
+
+body.page-home.page-fique .destaque-card-fique h3::after {
+  left: 50%;
+  transform: translateX(-50%) scaleX(0.4);
+  transform-origin: center;
+}
+
+body.page-home.page-fique .destaque-card-fique .destaque-card-footer {
+  justify-content: center;
+  width: 100%;
 }
 
 .page-fique:not(.page-fique-metodologia) .destaque-card-fique .destaque-card-media::before {
@@ -2383,6 +2415,10 @@ footer {
   .destaques-grid,
   .page-fique .destaques-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  body.page-home.page-fique .destaques-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .page-fique-metodologia-etapa-1 .destaques-grid {
